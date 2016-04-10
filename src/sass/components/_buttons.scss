@@ -1,0 +1,64 @@
+.#{$ns}-button {
+  display: inline-block;
+  @include border-radius($default_border_radius);
+  @include box-shadow();
+  padding: $primary_button_padding; //$primary_button_padding;
+  background-color: $button_default_color;
+  font-size: 1rem;
+  font-family: $body_font_family;
+  margin-bottom: 10px;
+  color: $white;
+  outline: none;
+  @include border(3px, solid, $button_default_color,"");
+
+  &:hover, &:visited{
+    background-color: $aig_dark_blue;
+    @include border(3px, solid, $aig_dark_blue, "");
+  }
+
+  &:active{
+    background-color: $aig_dark_blue;
+    @include border(3px, solid, $aig_dark_blue, "");
+  }
+  
+  &:focus{
+    background-color: $aig_dark_blue;
+    @include border(3px, solid, $aig_dark_blue, "");
+  }
+  
+  &:disabled{
+    background-color: $aig_dark_blue;
+    @include border(3px, solid, $aig_dark_blue, "");
+  }
+
+  .#{$ns}-button-icon-left{
+    margin-left: $default_margin*2;
+  }
+
+  .#{$ns}-button-icon-right{
+    margin-right: $default_margin*2;
+  }
+
+  &.#{$ns}-fluid {
+    width: 100%;
+  }
+  
+  &.#{$ns}-small {
+    padding: $secondary_button_padding; //$secondary_button_padding;
+  }
+  
+  &.#{$ns}-invert {
+    background-color: $white;
+    color: $button_default_color;
+  }
+
+  &.#{$ns}-oval {
+    padding: $secondary_button_padding; //$secondary_button_padding;
+    @include border-radius($default_border_radius*5);
+    @include box-shadow(0, 0, 0, 0);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

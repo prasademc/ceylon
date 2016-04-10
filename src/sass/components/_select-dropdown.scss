@@ -1,0 +1,47 @@
+.#{$ns}-select {
+    line-height: 1.2rem;
+    & select {
+    width: 100%;
+    background: white;
+    @include border(1px, solid, $input_border-color,"");
+    @include border-radius($default_border_radius); 
+    padding: $default_padding*3;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    z-index: 1;
+    outline: none;
+  }
+
+  &-wrap {
+    position: relative;
+    display: inline-table;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  &-right span {
+    right: 20px;
+    top: 12px;
+    background: transparent;
+    position: absolute;
+    pointer-events: none;
+    font-size: 1.5rem;
+    color: $aig_dark_grey;
+  }
+
+  &-icon {
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0em;
+    color: inherit;
+    font-size: 1em;
+    position: relative;
+    top: 3px;
+  }
+}

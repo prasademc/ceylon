@@ -1,0 +1,117 @@
+.#{$ns}-input {
+  @include border(1px, solid, $input_border-color,"");
+  @include border-radius($default_border_radius);
+  @include box-shadow(0px, 2px, 0px, $aig_form-field_shadow_color, true);
+  font-size: 1rem;
+  font-family: $body_font_family;
+  padding: $default_padding*3;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  color: $aig_text_color;
+  @include box-sizing();
+
+  &:hover, &:active, &:focus{
+    @include border(1px, solid, $aig_blue, "");
+  }
+
+  &:disabled {
+    background-color: $dim_color;
+    @include border(1px, solid, $input_border-color, "");
+  }
+
+  &.#{$ns}-input-error {
+    color: $aig_red;
+  }
+
+   &-success-enabled {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: $aig_green;
+    font-size: 1.6rem;
+  }
+
+  &-success-disabled {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: $aig_light_grey;
+    font-size: 1.6rem;
+  }
+}
+
+.#{$ns}-input-hamburger{
+  transition: 0.3s ease-in-out;;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right:22px;
+  top: 24px;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.#{$ns}-input-hamburger:checked ~ header,
+.#{$ns}-input-hamburger:checked ~ footer,
+.#{$ns}-input-hamburger:checked ~ main,
+.#{$ns}-input-hamburger:checked ~ div {
+  left: -270px;
+}
+
+.#{$ns}-input-hamburger:checked ~ body,
+ {
+    min-width: 1294px;
+}
+
+.#{$ns}-input-hamburger:checked ~ .#{$ns}-hamburger-absolute {
+    right: 0px;
+}
+
+.#{$ns}-input-hamburger:checked, .#{$ns}-input-hamburger:checked ~ .#{$ns}-label-hamburger {
+    right: 292px;
+}
+
+.#{$ns}-fieldset {
+  border: none;
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: center;
+  position: relative;
+
+  .#{$ns}-input-label-effect {
+    color: $aig_grey;
+    position: absolute;
+    top: 20px;
+    transform-origin: left center;
+    transition: all 0.1s ease-in-out;
+    width: 200px;
+    left: calc(50% - 6.250em);
+  }
+
+  .#{$ns}-input-effect {
+    text-align: center;
+    background-color: transparent;
+
+    &:focus ~ .#{$ns}-input-label-effect, &:valid ~ .#{$ns}-input-label-effect {
+      transform: translate3d(10px, -16px, 0);
+      font-size: 0.625rem;
+      display: block;
+      text-align: left;
+      top: 23px;
+      left: 0px;
+      width: auto;
+    }
+  }
+
+  .#{$ns}-error {
+    position: relative;
+    padding: 1px 0 0 0;
+    margin: 0;
+    right: 6px;
+  }
+}
+
+.#{$ns}-input-wrap {
+  position: relative;
+}

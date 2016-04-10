@@ -1,0 +1,102 @@
+//blues
+
+.#{$ns}-aigblue {
+	background-color: $aig_blue;
+	color: $white;
+}
+
+.#{$ns}-aigdarkerblue {
+	background-color: $aig_darker_blue;
+	color: $white;
+}
+
+.#{$ns}-aigdarkblue {
+	background-color: $aig_dark_blue;
+	color: $white;
+}
+
+.#{$ns}-aiglightblue {
+	background-color: $aig_light_blue;
+	color: $aig_dark_blue;
+}
+
+.#{$ns}-aiglighterblue {
+	background-color: $aig_lighter_blue;
+	color: $aig_dark_blue;
+}
+
+
+//other colors
+
+.#{$ns}-aigorange {
+	background-color: $aig_orange;
+	color: $white;
+}
+
+.#{$ns}-aiggreen {
+	background-color: $aig_green;
+	color: $white;
+}
+
+.#{$ns}-aigred {
+	background-color: $aig_red;
+	color: $white;
+}
+
+.#{$ns}-aiglightred {
+	background-color: $aig_light_red;
+	color: $aig_red;
+}
+
+.#{$ns}-aigyellow {
+	background-color: $aig_yellow;
+	color: $black;
+}
+
+.#{$ns}-aiglightyellow {
+	background-color: $aig_light_yellow;
+	color: $black;
+}
+
+.#{$ns}-aiggrape {
+	background-color: $aig_grape;
+	color: $white;
+}
+
+.#{$ns}-aiglightgrape {
+	background-color: $aig_light_grape;
+	color: $black;
+}
+
+
+//greys
+
+.#{$ns}-aigprogressgrey {
+	background-color: $aig_progress_grey;
+	color: $black;
+}
+
+.#{$ns}-aigdarkergrey {
+	background-color: $aig_darker_grey;
+	color: $white;
+}
+
+.#{$ns}-aigdarkgrey {
+	background-color: $aig_dark_grey;
+	color: $white;
+}
+
+.#{$ns}-aiggrey {
+	background-color: $aig_grey;
+	color: $black;
+}
+
+.#{$ns}-aiglightgrey {
+	background-color: $aig_light_grey;
+	color: $black;
+}
+
+.#{$ns}-aiglightergrey {
+	background-color: $aig_lighter_grey;
+	color: $black;
+}

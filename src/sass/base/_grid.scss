@@ -1,0 +1,238 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin box-shadow($top: 0px, $left: 1px, $blur: 2px, $color: $aig_form_field_text_color, $inset: false) {
+  @if $inset {
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+//grid units
+@for $i from 1 through 12 {
+	.#{$ns}-box-#{$i}c {
+		width: $grid * $i;
+		margin-right: 5px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+	}
+}
+
+//percentage units
+@for $i from 1 through 10 {
+    $multiplier: 10 * $i;
+    $percent: percentage($i/10);
+
+	.#{$ns}-box-#{$multiplier}p {
+		width: $percent;
+		margin: 0 5px 10px 0;
+
+		@include respond-to('small') {
+		    width: auto;
+		    margin: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+//outer container
+ .#{$ns}-main-container {
+ 	position: relative;
+ 	width: 1024px;
+ 	margin: 0 auto;
+	background-color: $aig_background_gray;
+	overflow: hidden;
+	transition: 0.3s ease-in-out; 
+	&.#{$ns}-landing{
+		background-color: $white;
+	}
+	&.#{$ns}-dashboard{
+		@include respond-to('small') {
+	    background-color: $aig_background_gray;
+		}
+	}
+
+	@include respond-to('small') {
+ 		border: none;
+	    width: 100%;
+	    margin: 0 0;
+	    background-color: $white;
+	}
+
+	@include respond-to('medium') {
+ 		border: none;
+	    width: 100%;
+	    margin: 0 auto;
+	}
+
+	@include respond-to('large') {
+ 		border: none;
+	    width: 1024px;
+	    margin: 0 auto;
+	}	
+ }
+
+//main container
+ .#{$ns}-fixed-container-small {
+	width: 640px;
+	margin: 30px auto;
+	padding: 35px 75px;
+	background-color: $white;
+	position: relative;
+	min-height: 485px;
+	display: flex;
+	flex-direction: column;
+	@include box-shadow();
+	@include border-radius($default_border_radius);
+	&.#{$ns}-dashboard{
+		padding: 35px 15px;
+	}
+		@include respond-to('small') {
+	 		border: none;
+	 		border-radius: 0;
+	 		box-shadow: none;
+		    width: 100%;
+		    margin: 0 auto;
+		    padding: 30px;
+		}
+ }
+  .#{$ns}-fixed-container-medium {
+	width: 720px;
+	margin: 30px auto;
+	padding: 35px;
+	background-color: $white;
+	position: relative;
+	min-height: 485px;
+	display: flex;
+	flex-direction: column;
+	align-items: inherit;
+	@include box-shadow();
+	@include border-radius($default_border_radius);
+	&.#{$ns}-dashboard{
+		background-color: transparent;
+		box-shadow: none;
+		padding: 0;
+		display: inherit;
+		}
+		
+		@include respond-to('small') {
+	 		border: none;
+	 		border-radius: 0;
+	 		box-shadow: none;
+		    width: 100%;
+		    margin: 0 auto;
+		    padding: 30px;
+		}
+ }
+
+//fixed container
+.#{$ns}-fixed-container {
+	width: 452px;
+	margin: 0 auto;
+	@include respond-to('small') {
+ 		border: none;
+	    width: auto;
+	}
+ }
+
+ .#{$ns}-align-center {
+ 	margin: 0 auto;
+ }
+ .#{$ns}-dashboard-icon-container{
+ 	display: flex;
+ 	flex-direction: row;
+ 	flex-wrap: wrap;
+ }
+
+.#{$ns}-icon-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+	  &-item{
+	  	padding: 0 0 25px 0;
+	  	@include respond-to('small'){
+	  		padding: 0 25px 25px 25px;
+	  	}
+  	}
+  
+}
+.#{$ns}-left-panel{
+	background-color: $white;
+	@include box-shadow();
+	@include border-radius($default_border_radius);
+	width: 220px;
+	float: left;
+		.#{$ns}-name-block{
+			text-align: center;
+			font-size: 1.2rem;
+			.#{$ns}-title{
+				padding: 20px 0;
+			}
+		}
+
+}
+.#{$ns}-right-panel{
+	width: 470px;
+	float: right;
+	@include respond-to('small'){
+		width: inherit; 
+		float: none;
+	}
+}
+.#{$ns}-panel-header{
+	background-color: $aig_dark_blue;
+	@include box-shadow();
+	@include border-radius($default_border_radius);
+	padding: 10px 15px;
+	h1{
+		color: $white;
+		font-size: 1.2rem;
+	}
+}
+.#{$ns}-container-header {
+	margin-bottom: 35px;
+	text-align: center;
+}
+
+.#{$ns}-3-col{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+.#{$ns}-details-section{
+	.#{$ns}-3-col{
+		padding: 10px 0;
+	}
+}

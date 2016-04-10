@@ -1,0 +1,131 @@
+a {
+  outline: 0px;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ %bold {
+    font-weight: bold;
+ }
+
+ .bold {
+    @extend %bold;
+ }
+
+%dim {
+  color: $dim_color; //cool_grey_6;
+}
+
+.aig-dim {
+  @extend %dim;
+}
+
+.aig-all-caps {
+  text-transform: uppercase;
+}
+
+.aig-heavy {
+  font-family: $futura_std_heavy, futura_std_book;
+  text-transform: uppercase;
+}
+
+.aigui-show{
+  display: block;
+  visibility: visible;
+}
+
+.aigui-hide{
+  display: none;
+  visibility: hidden;
+}
+
+.util.accessible-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.util.accessible-text a,
+.util.accessible-text a:link,
+.util.accessible-text a:visited,
+.util.accessible-text a:hover,
+.util.accessible-text a:active,
+.util.accessible-text a:focus {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.util.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.#{$ns}-util{
+  &-center{
+  text-align: center;
+  }
+  &-float-left{
+  float: left;
+  }
+  &-left{
+  text-align: left;
+  }
+  &-float-right{
+  float: right;
+  }
+  &-form-notes{
+    font-size: 0.875rem;
+    line-height: 1.25;
+  }
+  &-form-text{
+    font-size: 1rem;
+    line-height: 1.25;
+    color: $aig_text_color;
+  }
+
+  &-background-white{
+    background-color: $white;
+    @include respond-to('small'){
+      background-color: $white!important;
+    }
+  }
+
+  &-wide-visible{
+    display: inherit;
+    @include respond-to('small') {
+      display: none;
+    }
+  }
+
+  &-mobile-visible{
+    display: none;
+    @include respond-to('small') {
+      display: inherit;
+    }
+  }
+}
+//fixed container
+.#{$ns}-util-left-to-center {
+    justify-content: flex-start;
+    @include respond-to('small') {
+      justify-content: center;
+   }
+ }
+
+ .#{$ns}-fixed-height {
+    min-height: 100vh;
+ }

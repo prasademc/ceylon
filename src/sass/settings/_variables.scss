@@ -1,0 +1,135 @@
+/*
+ * Theme For the AIG UI Library
+ */
+$theme: "AIG-Corporate" !default;
+
+/*
+ * Pseudo namespace with a ns- prefix For the AIG UI Library
+ */
+$ns: "aigui";
+$grid: 80px;
+
+/****************************************************************************************
+*************************** Break points for responsive *********************************
+***************************************************************************************/
+$breakpoints: (
+  'small': (max-width: 767px),
+  'medium': (min-width: 768px),
+  'large': (min-width: 1024px)
+);
+
+/****************************************************************************************
+************************************** Color *******************************************
+***************************************************************************************/
+
+/*
+ * AIG Standard Colors for AIG UI Library
+ */
+$aig_blue: #00a4e4; // Base color for entire theme
+$aig_dark_blue: #0073ae;
+$aig_darker_blue: #005984;
+$aig_light_blue: #50c8e8;
+$aig_lighter_blue: #ade0ee;
+$aig_progress_grey: #666666;
+$aig_darker_grey: #54565b;
+$aig_dark_grey: #76777b;
+$aig_grey: #a8a8aa;
+$aig_light_grey: #d1d0ce;
+$aig_lighter_grey: #f0f0f0;
+$aig_background_gray: #f5f5f5;
+
+/*
+ * AIG Secondary Colors for AIG UI Library
+ */
+$aig_orange: #e36f1e;
+$aig_light_orange: #ffa666;
+$aig_green: #78a22f;
+$aig_light_green: #a5cc62;
+$aig_red: #c41c30;
+$aig_light_red: lighten($aig_red, 50%);
+$aig_yellow: #fdb913;
+$aig_light_yellow: #ffd770;
+$aig_grape: #b0237c;
+$aig_light_grape: #e65cb3;
+
+/*
+ * AIG Supporting Colors for AIG UI Library
+ */
+$black: #000000;
+$white: #ffffff;
+$aig_text_color: #444444;
+$aig_form_field_text_color: $aig_light_grey;
+$aig_form_field_shadow_color: #f5f5f5;
+$aig_button_shadow_color: #7aa0b3;
+
+
+$dim_color: $aig_lighter_grey;
+$border_color: $aig_light_grey;
+$input_border-color: $aig_light_grey;
+$field_text_color: $aig_text_color;
+$switch_background_color: $aig_light_grey;
+$hover_color: $aig_blue;
+
+$pagination_selector_color: $aig_blue;
+
+//questionable colors
+$select_color: #444444;
+$unselect_color: #999999;
+$aig_header_divider_grey: #d7d7d7;
+$grey_title_color: $select_color;
+
+$aig_alert_bg_red: #ffd8dd;
+$aig_alert_bg_green: #d8e5c3;
+$aig_alert_bg_blue: #cce3f0;
+
+
+/****************************************************************************************
+************************ Padding, Margins and Border Radius *****************************
+****************************************************************************************/
+
+$default_margin: 5px;
+$default_padding: 5px;
+
+$default_border_radius: 4px;
+$default_border_padding: 5px;
+
+
+
+/****************************************************************************************
+*************************************** Paths *******************************************
+****************************************************************************************/
+$font_path: '../css/base/fonts/';
+$image_path: '../assets/images/';
+$sprites: $image_path; // + 'sprites/';
+$miscImages: $image_path + 'misc/';
+
+
+/****************************************************************************************
+************************************ Futura fonts ***************************************
+****************************************************************************************/
+$futura_std_book: "futura_std_book";
+$futura_std_heavy: "futura_std_heavy";
+
+/*
+ * Font family
+ */
+ $backup_font_family: Arial, sans-serif;
+ $body_font_family: $futura_std_book, $backup_font_family;
+ $heavy_font_family: $futura_std_heavy, $backup_font_family;
+
+
+/****************************************************************************************
+ *************************************** Form ********************************************
+ ****************************************************************************************/
+
+/*
+ * Button
+ */
+$button_default_color: $aig_blue;
+$primary_button_padding: $default_padding*3 $default_padding*6;
+$secondary_button_padding: $default_padding*2 $default_padding*3;
+
+
+/****************************************************************************************
+ *************************************** Form ********************************************
+ ****************************************************************************************/

@@ -1,0 +1,62 @@
+.#{$ns}-radio-label-field{
+	@include border(1px, solid, $input_border-color,"");
+	@include box-shadow(0px, 2px, 0px, $aig_form-field_shadow_color, true);
+	padding: $default_padding *3 $default_padding*2;
+	position: relative;
+	text-align: center;
+	@include border-radius($default_border_radius); 
+
+	.#{$ns}-radio-input{
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 15px;
+		z-index: 1;
+		background-color: transparent;
+		visibility: hidden;
+	}
+
+	.#{$ns}-radio-label-hidden{
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 15px;
+		background: transparent;
+		border: none;
+		z-index: 99;
+		cursor: pointer;
+	}
+
+	.#{$ns}-radio-outer {
+		width: 18px;
+		height: 18px;
+		position: relative;
+		z-index: 0;
+		@include border(1px, solid, $input_border-color,"");
+		@include border-radius(50%);
+		display: inline-block;
+		.#{$ns}-radio-inner {
+			@include border-radius(50%);
+			margin: 2px;
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			background-color: transparent;
+		}
+	}
+
+	.#{$ns}-radio-label{
+		font-size: 1rem;
+		line-height: 1.125;
+		font-family: $body_font_family;
+		color: $aig_text_color;
+		position: relative;
+		margin-left: 5px;
+	}
+
+	.#{$ns}-radio-input:checked ~ .#{$ns}-radio-outer {
+		.#{$ns}-radio-inner {
+			background-color: $aig_blue;
+		}
+	}
+}
